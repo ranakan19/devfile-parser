@@ -1,8 +1,8 @@
 package testingutil
 
 import (
-	apiComp "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 	"github.com/devfile/parser/pkg/devfile/parser/data/common"
+	apiComp "github.com/ranakan19/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 	// versionsCommon "github.com/devfile/parser/pkg/devfile/parser/data/common"
 )
 

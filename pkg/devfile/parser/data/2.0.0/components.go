@@ -3,8 +3,8 @@ package version200
 import (
 	"strings"
 
-	apiComp "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 	"github.com/devfile/parser/pkg/devfile/parser/data/common"
+	apiComp "github.com/ranakan19/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 )
 
 // GetComponents returns the slice of DevfileComponent objects parsed from the Devfile

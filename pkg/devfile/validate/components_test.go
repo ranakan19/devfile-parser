@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	apiComp "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 	"github.com/devfile/parser/pkg/devfile/parser/data/common"
+	apiComp "github.com/ranakan19/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 )
 
 func TestValidateComponents(t *testing.T) {

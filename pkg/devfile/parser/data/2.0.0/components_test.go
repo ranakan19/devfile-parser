@@ -3,8 +3,8 @@ package version200
 import (
 	"testing"
 
-	apiComp "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 	common "github.com/devfile/parser/pkg/devfile/parser/data/common"
+	apiComp "github.com/ranakan19/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 )
 
 func TestGetCommands(t *testing.T) {

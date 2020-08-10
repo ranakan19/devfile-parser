@@ -1,7 +1,7 @@
 package common
 
 import (
-	apiComp "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
+	apiComp "github.com/ranakan19/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 )
 
 // DevfileComponentType describes the type of component.
@@ -68,7 +68,7 @@ type DevfileComponent struct {
 	Volume *apiComp.Volume `json:"volume,omitempty"`
 
 	// Allows specifying a dockerfile to initiate build
-	Dockerfile *Dockerfile `json:"dockerfile,omitempty"`
+	Dockerfile *apiComp.Dockerfile `json:"dockerfile,omitempty"`
 }
 
 // Configuration
@@ -337,24 +337,24 @@ type Configuration struct {
 // 	SparseCheckoutDir string `json:"sparseCheckoutDir,omitempty"`
 // }
 
-type Dockerfile struct {
-	// Mandatory name that allows referencing the Volume component in Container volume mounts or inside a parent
-	Name string `json:"name"`
+// type Dockerfile struct {
+// 	// Mandatory name that allows referencing the Volume component in Container volume mounts or inside a parent
+// 	Name string `json:"name"`
 
-	// Mandatory path to source code
-	Source *Source `json:"source"`
+// 	// Mandatory path to source code
+// 	Source *Source `json:"source"`
 
-	// Mandatory path to dockerfile
-	DockerfileLocation string `json:"dockerfileLocation"`
+// 	// Mandatory path to dockerfile
+// 	DockerfileLocation string `json:"dockerfileLocation"`
 
-	// Mandatory destination to registry to push built image
-	Destination string `json:"destination,omitempty"`
-}
+// 	// Mandatory destination to registry to push built image
+// 	Destination string `json:"destination,omitempty"`
+// }
 
-type Source struct {
-	// Mandatory path to local source directory folder
-	SourceDir string `json:"sourceDir"`
+// type Source struct {
+// 	// Mandatory path to local source directory folder
+// 	SourceDir string `json:"sourceDir"`
 
-	// Mandatory path to source repository hosted locally or on cloud
-	Location string `json:"location"`
-}
+// 	// Mandatory path to source repository hosted locally or on cloud
+// 	Location string `json:"location"`
+// }

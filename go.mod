@@ -9,6 +9,7 @@ require (
 	github.com/gobwas/glob v0.2.3
 	github.com/google/go-github/v30 v30.1.0
 	github.com/pkg/errors v0.9.1
+	github.com/ranakan19/kubernetes-api v0.0.0-20200807164423-017d51343de8
 	github.com/spf13/afero v1.3.2
 	github.com/xeipuuv/gojsonschema v1.2.0
 	gopkg.in/yaml.v2 v2.3.0
