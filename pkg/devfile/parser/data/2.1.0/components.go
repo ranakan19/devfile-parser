@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	v1 "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
-	"github.com/devfile/parser/pkg/devfile/parser/data/common"
+	"github.com/ranakan19/parser/pkg/devfile/parser/data/common"
 )
 
 // GetComponents returns the slice of DevfileComponent objects parsed from the Devfile

@@ -1,8 +1,8 @@
 package parser
 
 import (
-	devfileCtx "github.com/devfile/parser/pkg/devfile/parser/context"
-	"github.com/devfile/parser/pkg/devfile/parser/data"
+	devfileCtx "github.com/ranakan19/parser/pkg/devfile/parser/context"
+	"github.com/ranakan19/parser/pkg/devfile/parser/data"
 )
 
 // Default filenames for create devfile

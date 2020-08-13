@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/devfile/parser/pkg/devfile/parser"
-	v200 "github.com/devfile/parser/pkg/devfile/parser/data/2.0.0"
+	"github.com/ranakan19/parser/pkg/devfile/parser"
+	v200 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.0.0"
 )
 
 func main() {

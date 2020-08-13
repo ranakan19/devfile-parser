@@ -5,9 +5,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	devfileCtx "github.com/devfile/parser/pkg/devfile/parser/context"
-	"github.com/devfile/parser/pkg/devfile/parser/data"
-	"github.com/devfile/parser/pkg/devfile/validate"
+	devfileCtx "github.com/ranakan19/parser/pkg/devfile/parser/context"
+	"github.com/ranakan19/parser/pkg/devfile/parser/data"
+	"github.com/ranakan19/parser/pkg/devfile/validate"
 )
 
 // ParseDevfile func validates the devfile integrity.

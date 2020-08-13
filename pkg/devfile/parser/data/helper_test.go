@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	v200 "github.com/devfile/parser/pkg/devfile/parser/data/2.0.0"
+	v200 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.0.0"
 )
 
 func TestNewDevfileData(t *testing.T) {

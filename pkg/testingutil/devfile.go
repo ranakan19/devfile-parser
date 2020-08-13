@@ -2,8 +2,8 @@ package testingutil
 
 import (
 	v1 "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
-	"github.com/devfile/parser/pkg/devfile/parser/data/common"
-	// versionsCommon "github.com/devfile/parser/pkg/devfile/parser/data/common"
+	"github.com/ranakan19/parser/pkg/devfile/parser/data/common"
+	// versionsCommon "github.com/ranakan19/parser/pkg/devfile/parser/data/common"
 )
 
 // TestDevfileData is a convenience data type used to mock up a devfile configuration

@@ -3,8 +3,8 @@ package parser
 import (
 	"fmt"
 
-	"github.com/devfile/parser/pkg/testingutil/filesystem"
-	"github.com/devfile/parser/pkg/util"
+	"github.com/ranakan19/parser/pkg/testingutil/filesystem"
+	"github.com/ranakan19/parser/pkg/util"
 	"k8s.io/klog"
 )
 

@@ -3,9 +3,9 @@ package validate
 import (
 	"reflect"
 
-	v200 "github.com/devfile/parser/pkg/devfile/parser/data/2.0.0"
-	v210 "github.com/devfile/parser/pkg/devfile/parser/data/2.1.0"
-	"github.com/devfile/parser/pkg/devfile/parser/data/common"
+	v200 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.0.0"
+	v210 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.1.0"
+	"github.com/ranakan19/parser/pkg/devfile/parser/data/common"
 	"k8s.io/klog"
 )
 

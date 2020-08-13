@@ -3,10 +3,10 @@ package parser
 import (
 	"testing"
 
-	devfileCtx "github.com/devfile/parser/pkg/devfile/parser/context"
-	v200 "github.com/devfile/parser/pkg/devfile/parser/data/2.0.0"
-	"github.com/devfile/parser/pkg/devfile/parser/data/common"
-	"github.com/devfile/parser/pkg/testingutil/filesystem"
+	devfileCtx "github.com/ranakan19/parser/pkg/devfile/parser/context"
+	v200 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.0.0"
+	"github.com/ranakan19/parser/pkg/devfile/parser/data/common"
+	"github.com/ranakan19/parser/pkg/testingutil/filesystem"
 )
 
 func TestWriteJsonDevfile(t *testing.T) {
