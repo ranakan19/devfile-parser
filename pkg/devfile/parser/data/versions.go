@@ -4,8 +4,8 @@ import (
 	"reflect"
 
 	// v100 "github.com/devfile/parser/pkg/devfile/parser/data/1.0.0"
-	v200 "github.com/devfile/parser/pkg/devfile/parser/data/2.0.0"
-	v210 "github.com/devfile/parser/pkg/devfile/parser/data/2.1.0"
+	v200 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.0.0"
+	v210 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.1.0"
 )
 
 // SupportedApiVersions stores the supported devfile API versions
