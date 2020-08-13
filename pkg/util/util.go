@@ -3,7 +3,6 @@ package util
 import (
 	"archive/zip"
 	"bufio"
-	"context"
 	"crypto/rand"
 	"fmt"
 	"io"
@@ -25,7 +24,6 @@ import (
 	"time"
 
 	"github.com/gobwas/glob"
-	github "github.com/google/go-github/v30/github"
 	"github.com/pkg/errors"
 	"github.com/ranakan19/parser/pkg/testingutil/filesystem"
 	corev1 "k8s.io/api/core/v1"
@@ -771,52 +769,52 @@ func ConvertGitSSHRemoteToHTTPS(remote string) string {
 }
 
 // GetGitHubZipURL downloads a repo from a URL to a destination
-func GetGitHubZipURL(repoURL string) (string, error) {
-	var url string
-	// Convert ssh remote to https
-	if strings.HasPrefix(repoURL, "git@") {
-		repoURL = ConvertGitSSHRemoteToHTTPS(repoURL)
-	}
-	// expecting string in format 'https://github.com/<owner>/<repo>'
-	if strings.HasPrefix(repoURL, "https://") {
-		repoURL = strings.TrimPrefix(repoURL, "https://")
-	} else {
-		return "", errors.New("Invalid GitHub URL. Please use https://")
-	}
+// func GetGitHubZipURL(repoURL string) (string, error) {
+// 	var url string
+// 	// Convert ssh remote to https
+// 	if strings.HasPrefix(repoURL, "git@") {
+// 		repoURL = ConvertGitSSHRemoteToHTTPS(repoURL)
+// 	}
+// 	// expecting string in format 'https://github.com/<owner>/<repo>'
+// 	if strings.HasPrefix(repoURL, "https://") {
+// 		repoURL = strings.TrimPrefix(repoURL, "https://")
+// 	} else {
+// 		return "", errors.New("Invalid GitHub URL. Please use https://")
+// 	}
 
-	repoArray := strings.Split(repoURL, "/")
-	if len(repoArray) < 2 {
-		return url, errors.New("Invalid GitHub URL: Could not extract owner and repo, expecting 'https://github.com/<owner>/<repo>'")
-	}
+// 	repoArray := strings.Split(repoURL, "/")
+// 	if len(repoArray) < 2 {
+// 		return url, errors.New("Invalid GitHub URL: Could not extract owner and repo, expecting 'https://github.com/<owner>/<repo>'")
+// 	}
 
-	owner := repoArray[1]
-	if len(owner) == 0 {
-		return url, errors.New("Invalid GitHub URL: owner cannot be empty. Expecting 'https://github.com/<owner>/<repo>'")
-	}
+// 	owner := repoArray[1]
+// 	if len(owner) == 0 {
+// 		return url, errors.New("Invalid GitHub URL: owner cannot be empty. Expecting 'https://github.com/<owner>/<repo>'")
+// 	}
 
-	repo := repoArray[2]
-	if len(repo) == 0 {
-		return url, errors.New("Invalid GitHub URL: repo cannot be empty. Expecting 'https://github.com/<owner>/<repo>'")
-	}
+// 	repo := repoArray[2]
+// 	if len(repo) == 0 {
+// 		return url, errors.New("Invalid GitHub URL: repo cannot be empty. Expecting 'https://github.com/<owner>/<repo>'")
+// 	}
 
-	if strings.HasSuffix(repo, ".git") {
-		repo = strings.TrimSuffix(repo, ".git")
-	}
+// 	if strings.HasSuffix(repo, ".git") {
+// 		repo = strings.TrimSuffix(repo, ".git")
+// 	}
 
-	// TODO: pass branch or tag from devfile
-	branch := "master"
+// 	// TODO: pass branch or tag from devfile
+// 	branch := "master"
 
-	client := github.NewClient(nil)
-	opt := &github.RepositoryContentGetOptions{Ref: branch}
+// 	client := github.NewClient(nil)
+// 	opt := &github.RepositoryContentGetOptions{Ref: branch}
 
-	URL, response, err := client.Repositories.GetArchiveLink(context.Background(), owner, repo, "zipball", opt, true)
-	if err != nil {
-		errMessage := fmt.Sprintf("Error getting zip url. Response: %s.", response.Status)
-		return url, errors.New(errMessage)
-	}
-	url = URL.String()
-	return url, nil
-}
+// 	URL, response, err := client.Repositories.GetArchiveLink(context.Background(), owner, repo, "zipball", opt, true)
+// 	if err != nil {
+// 		errMessage := fmt.Sprintf("Error getting zip url. Response: %s.", response.Status)
+// 		return url, errors.New(errMessage)
+// 	}
+// 	url = URL.String()
+// 	return url, nil
+// }
 
 // GetAndExtractZip downloads a zip file from a URL with a http prefix or
 // takes an absolute path prefixed with file:// and extracts it to a destination.
