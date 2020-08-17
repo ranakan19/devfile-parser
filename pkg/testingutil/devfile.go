@@ -149,3 +149,19 @@ func GetFakeExecRunCommands() []v1.ExecCommand {
 		},
 	}
 }
+
+// GetFakeEnv returns Fake EnvVar for tests
+func GetFakeEnv(name, value string) v1.EnvVar {
+	return v1.EnvVar{
+		Name:  name,
+		Value: value,
+	}
+}
+
+// GetFakeVolumeMount returns a fake volume mount for testing
+func GetFakeVolumeMount(name, path string) v1.VolumeMount {
+	return v1.VolumeMount{
+		Name: name,
+		Path: path,
+	}
+}

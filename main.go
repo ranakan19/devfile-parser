@@ -20,9 +20,9 @@ func main() {
 		}
 
 		for _, component := range devfile.Data.GetComponents() {
-			if component.Dockerfile != nil {
-				fmt.Println(component.Dockerfile.DockerfileLocation)
-			}
+			// if component.Dockerfile != nil {
+			// 	fmt.Println(component.Dockerfile.DockerfileLocation)
+			// }
 			if component.Container != nil {
 				fmt.Println(component.Container.Image)
 			}
@@ -41,6 +41,6 @@ func main() {
 func ParseDevfile(devfileLocation string) (devfileoj parser.DevfileObj, err error) {
 
 	var devfile parser.DevfileObj
-	devfile, err = parser.ParseAndValidate(devfileLocation)
+	// devfile, err = parser.ParseAndValidate(devfileLocation)
 	return devfile, err
 }

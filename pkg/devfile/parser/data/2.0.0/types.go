@@ -12,7 +12,7 @@ type Devfile200 struct {
 	Commands []v1.Command `json:"commands,omitempty"`
 
 	// List of the workspace components, such as editor and plugins, user-provided containers, or other types of components
-	Components []common.DevfileComponent `json:"components,omitempty"`
+	Components []v1.Component `json:"components,omitempty"`
 
 	// Bindings of commands to events. Each command is referred-to by its name.
 	Events v1.WorkspaceEvents `json:"events,omitempty"`

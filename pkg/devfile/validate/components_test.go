@@ -6,7 +6,6 @@ import (
 	"testing"
 
 	v1 "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
-	"github.com/ranakan19/parser/pkg/devfile/parser/data/common"
 )
 
 func TestValidateComponents(t *testing.T) {
@@ -14,7 +13,7 @@ func TestValidateComponents(t *testing.T) {
 	t.Run("No components present", func(t *testing.T) {
 
 		// Empty components
-		components := []common.DevfileComponent{}
+		components := []v1.Component{}
 
 		got := ValidateComponents(components)
 		want := fmt.Errorf(ErrorNoComponents)
@@ -26,10 +25,12 @@ func TestValidateComponents(t *testing.T) {
 
 	t.Run("Container type of component present", func(t *testing.T) {
 
-		components := []common.DevfileComponent{
+		components := []v1.Component{
 			{
-				Container: &v1.Container{
-					Name: "container",
+				Container: &v1.ContainerComponent{
+					Container: v1.Container{
+						Name: "container",
+					},
 				},
 			},
 		}

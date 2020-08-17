@@ -3,6 +3,8 @@ package parser
 import (
 	"fmt"
 
+	"net/url"
+
 	"github.com/ranakan19/parser/pkg/testingutil/filesystem"
 	"github.com/ranakan19/parser/pkg/util"
 	"k8s.io/klog"
@@ -26,6 +28,9 @@ type DevfileCtx struct {
 	// devfile json schema
 	jsonSchema string
 
+	//url path of the devfile
+	url string
+
 	// filesystem for devfile
 	Fs filesystem.Filesystem
 }
@@ -35,6 +40,13 @@ func NewDevfileCtx(path string) DevfileCtx {
 	return DevfileCtx{
 		relPath: path,
 		Fs:      filesystem.DefaultFs{},
+	}
+}
+
+// NewURLDevfileCtx returns a new DevfileCtx type object
+func NewURLDevfileCtx(url string) DevfileCtx {
+	return DevfileCtx{
+		url: url,
 	}
 }
 
@@ -77,6 +89,21 @@ func (d *DevfileCtx) PopulateFromBytes(bytes []byte) (err error) {
 
 	// Read and save devfile content
 	if err := d.SetDevfileContentFromBytes(bytes); err != nil {
+		return err
+	}
+	return d.populateDevfile()
+}
+
+// PopulateFromURL fills the DevfileCtx struct with relevant context info
+func (d *DevfileCtx) PopulateFromURL() (err error) {
+
+	_, err = url.ParseRequestURI(d.url)
+	if err != nil {
+		return err
+	}
+
+	// Read and save devfile content
+	if err := d.SetDevfileContent(); err != nil {
 		return err
 	}
 	return d.populateDevfile()

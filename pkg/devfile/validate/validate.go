@@ -3,15 +3,14 @@ package validate
 import (
 	"reflect"
 
+	"github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
 	v200 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.0.0"
-	v210 "github.com/ranakan19/parser/pkg/devfile/parser/data/2.1.0"
-	"github.com/ranakan19/parser/pkg/devfile/parser/data/common"
 	"k8s.io/klog"
 )
 
 // ValidateDevfileData validates whether sections of devfile are odo compatible
 func ValidateDevfileData(data interface{}) error {
-	var components []common.DevfileComponent
+	var components []v1alpha1.Component
 
 	typeData := reflect.TypeOf(data)
 
@@ -25,10 +24,10 @@ func ValidateDevfileData(data interface{}) error {
 		components = d.GetComponents()
 	}
 
-	if typeData == reflect.TypeOf(&v210.Devfile210{}) {
-		d := data.(*v210.Devfile210)
-		components = d.GetComponents()
-	}
+	// if typeData == reflect.TypeOf(&v210.Devfile210{}) {
+	// 	d := data.(*v210.Devfile210)
+	// 	components = d.GetComponents()
+	// }
 
 	// Validate Components
 	if err := ValidateComponents(components); err != nil {

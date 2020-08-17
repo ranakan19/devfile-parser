@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	v1 "github.com/devfile/kubernetes-api/pkg/apis/workspaces/v1alpha1"
-	"github.com/ranakan19/parser/pkg/devfile/parser/data/common"
 )
 
 // Errors
@@ -14,7 +13,7 @@ var (
 )
 
 // ValidateComponents validates all the devfile components
-func ValidateComponents(components []common.DevfileComponent) error {
+func ValidateComponents(components []v1.Component) error {
 
 	// components cannot be empty
 	if len(components) < 1 {
